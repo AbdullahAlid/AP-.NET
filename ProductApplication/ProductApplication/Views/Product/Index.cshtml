@@ -1,0 +1,36 @@
+﻿@model List<ProductApplication.Models.Entities.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="container">
+    <a href="/Product/Create" class="btn btn-success">Add Product</a>
+
+</div>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Qty</td>
+            <td>Price</td>
+            <td>Desc</td>
+        </tr>
+        @foreach(var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Name</td>
+                    <td>@p.Qty</td>
+                    <td>@p.Price</td>
+                    <td>@p.Desc</td>
+                    <td><a class="btn btn-primary" href="/Product/Edit/@p.Id">Edit</a></td>
+                    <td><a class="btn btn-primary" href="/Product/Delete/@p.Id">Delete</a></td>
+                </tr>
+            }
+
+    </table>
+
+</div>
+
